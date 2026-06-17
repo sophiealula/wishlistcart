@@ -1087,10 +1087,12 @@ git commit -m "add Safari web-extension Xcode project"
 
 ## Verification (filled during execution)
 
-- [ ] Unit tests green: `npm test`
-- [ ] Chrome: save loop works on ≥3 real sites
-- [ ] Gallery layout matches screenshot
-- [ ] Safari: extension loads + saves
+- [x] Unit tests green: `npm test` → **19 passed** (scrape JSON-LD/@graph/OG/DOM + price parsing, classifier, totals/format/filter).
+- [x] Gallery layout matches screenshot — verified via headless screenshot of the real `gallery.js`/`view.js`/`styles.css` (`dev/gallery.png`): "Saved" + count, top-right total, hamburger, category tab bar (empty categories hidden), brand/name/price card grid, floating "+".
+- [ ] Chrome: save loop on real sites — **must be done manually.** Chrome 149 (this machine) dropped the `--load-extension` flag (~M137), so Playwright can't auto-load the extension; `dev/integration.mjs` confirms workers=0. Load unpacked per README and save on a few sites.
+- [ ] Safari: extension loads + saves — gated on full Xcode (Task 10).
+
+**Not auto-verified:** the `chrome.*` plumbing (manifest registration, `storage.local`, `scripting.executeScript` on the active tab). These are standard MV3 and get exercised the moment the extension is loaded unpacked.
 
 ## Known risks / notes
 
