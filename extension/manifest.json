@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "WishlistCart",
+  "version": "0.1.0",
+  "description": "Save products from across the web with a click.",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Save to WishlistCart"
+  },
+  "background": { "service_worker": "background.js" },
+  "icons": { "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "web_accessible_resources": [
+    { "resources": ["gallery.html"], "matches": ["<all_urls>"] }
+  ]
+}
