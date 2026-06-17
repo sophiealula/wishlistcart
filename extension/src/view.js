@@ -1,0 +1,85 @@
+// Shared rendering + save logic used by both the popup and the gallery.
+import { scrapeProduct } from './lib/scrape.js'
+import { classify, CATEGORIES } from './lib/classify.js'
+import { getItems, saveItem, removeItem } from './storage.js'
+import { formatPrice, totalValue, countByCategory, filterByCategory } from './lib/items.js'
+
+export const TAB_ORDER = ['all', ...CATEGORIES]
+export const LABELS = {
+  all: 'All', tops: 'Tops', bottoms: 'Bottoms', outerwear: 'Outerwear',
+  shoes: 'Shoes', bags: 'Bags', accessories: 'Accessories',
+}
+
+// Tracks the active tab filter across re-renders.
+const state = { active: 'all' }
+
+// els: { count, total, tabs, grid }
+export function renderCollection(els, items) {
+  els.count.textContent = `${items.length} item${items.length === 1 ? '' : 's'}`
+  els.total.textContent = formatPrice(totalValue(items), 'USD')
+  const counts = countByCategory(items)
+
+  els.tabs.innerHTML = ''
+  for (const key of TAB_ORDER) {
+    if (key !== 'all' && counts[key] === 0) continue // hide empty categories
+    const b = document.createElement('button')
+    b.textContent = LABELS[key]
+    if (key === state.active) b.classList.add('active')
+    b.onclick = () => { state.active = key; renderCollection(els, items) }
+    els.tabs.appendChild(b)
+  }
+  // If the active filter went empty (e.g. last item removed), fall back to All.
+  if (state.active !== 'all' && counts[state.active] === 0) state.active = 'all'
+
+  els.grid.innerHTML = ''
+  const shown = filterByCategory(items, state.active)
+  if (!shown.length) {
+    els.grid.innerHTML = `<div class="empty">Nothing here yet.<br>Open a product page and save it.</div>`
+    return
+  }
+  for (const it of shown) {
+    const card = document.createElement('div')
+    card.className = 'card'
+    card.innerHTML = `
+      <img class="thumb" alt="">
+      <div class="brand"></div>
+      <div class="name"></div>
+      <div class="price"></div>
+      <button class="remove" title="Remove">×</button>`
+    const img = card.querySelector('.thumb')
+    if (it.image) img.src = it.image
+    img.onerror = () => { img.style.visibility = 'hidden' }
+    card.querySelector('.brand').textContent = it.brand || ''
+    card.querySelector('.name').textContent = it.title || ''
+    card.querySelector('.price').textContent = formatPrice(it.price, it.currency)
+    card.querySelector('.remove').onclick = async (e) => {
+      e.stopPropagation()
+      renderCollection(els, await removeItem(it.id))
+    }
+    card.onclick = () => { if (it.url) chrome.tabs.create({ url: it.url }) }
+    els.grid.appendChild(card)
+  }
+}
+
+export function showToast(el, msg) {
+  el.textContent = msg
+  el.classList.add('show')
+  setTimeout(() => el.classList.remove('show'), 1600)
+}
+
+// Scrape the active tab, classify, and save. Returns { added, items } or throws.
+export async function saveActiveTab() {
+  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true })
+  if (!tab || !tab.id) throw new Error('no active tab')
+  const [{ result }] = await chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    func: () => ({ html: document.documentElement.outerHTML, url: location.href }),
+  })
+  const parsed = new DOMParser().parseFromString(result.html, 'text/html')
+  const data = scrapeProduct(parsed)
+  data.url = result.url // DOMParser docs carry no location
+  data.category = classify(`${data.title} ${data.brand || ''}`)
+  return saveItem(data)
+}
+
+export { getItems }

@@ -1,0 +1,68 @@
+/* styles.css — shared by popup + gallery */
+:root {
+  --bg: #ffffff;
+  --ink: #111111;
+  --muted: #9a9a9a;
+  --line: #ededed;
+  --chip-active: #111111;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg);
+  -webkit-font-smoothing: antialiased; }
+
+.header { display: flex; align-items: flex-start; justify-content: space-between;
+  padding: 16px 18px 8px; }
+.header .title { font-size: 17px; font-weight: 600; line-height: 1.1; }
+.header .subtitle { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.header .total { font-size: 17px; font-weight: 600; }
+.header .menu { background: none; border: none; font-size: 15px; color: var(--ink);
+  cursor: pointer; padding: 0 2px; line-height: 1; }
+.header .right { display: flex; align-items: center; gap: 10px; }
+
+.tabs { display: flex; gap: 18px; padding: 6px 18px 0; overflow-x: auto;
+  border-bottom: 1px solid var(--line); }
+.tabs button { background: none; border: none; padding: 0 0 10px; font-size: 13px;
+  color: var(--muted); cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent;
+  margin-bottom: -1px; }
+.tabs button.active { color: var(--ink); border-bottom-color: var(--chip-active); font-weight: 500; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; padding: 16px 18px 84px; }
+.card { display: flex; flex-direction: column; cursor: pointer; position: relative; }
+.card .thumb { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #f4f4f4;
+  border-radius: 10px; display: block; }
+.card .brand { font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--muted); margin-top: 9px; }
+.card .name { font-size: 12px; line-height: 1.25; margin-top: 2px; }
+.card .price { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.card .remove { position: absolute; top: 8px; right: 8px; width: 22px; height: 22px;
+  border-radius: 50%; border: none; background: rgba(255,255,255,0.9); color: #111;
+  font-size: 13px; line-height: 1; cursor: pointer; display: none; align-items: center;
+  justify-content: center; box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+.card:hover .remove { display: flex; }
+
+.empty { grid-column: 1 / -1; padding: 48px 18px; text-align: center; color: var(--muted);
+  font-size: 13px; line-height: 1.5; }
+
+.save-btn { position: fixed; left: 18px; right: 18px; bottom: 16px; height: 44px;
+  border: none; border-radius: 22px; background: var(--ink); color: #fff; font-size: 14px;
+  font-weight: 500; cursor: pointer; }
+.save-btn:disabled { opacity: 0.5; cursor: default; }
+
+.toast { position: fixed; left: 50%; bottom: 72px; transform: translateX(-50%);
+  background: #111; color: #fff; font-size: 12px; padding: 8px 14px; border-radius: 16px;
+  opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 10; }
+.toast.show { opacity: 1; }
+
+/* gallery-specific */
+.page { max-width: 980px; margin: 0 auto; padding: 0 8px; }
+.page .header { padding: 28px 18px 12px; }
+.page .header .title { font-size: 22px; }
+.page .header .total { font-size: 22px; }
+.page .tabs { padding: 8px 18px 0; gap: 24px; }
+.page .tabs button { font-size: 14px; padding-bottom: 14px; }
+.page .grid { grid-template-columns: repeat(3, 1fr); gap: 30px 24px; padding: 22px 18px 120px; }
+@media (max-width: 720px) { .page .grid { grid-template-columns: repeat(2, 1fr); } }
+.fab { position: fixed; right: 28px; bottom: 28px; width: 52px; height: 52px; border-radius: 50%;
+  border: none; background: var(--ink); color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18); }

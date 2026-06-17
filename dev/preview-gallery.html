@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WishlistCart — preview</title>
+  <link rel="stylesheet" href="../extension/styles.css">
+</head>
+<body>
+  <!-- Mock the chrome.* APIs + seed data BEFORE the module loads. -->
+  <script>
+    const SEED = [
+      { id:'1', brand:'FACE ROCK', title:'floral graphic T-shirt', price:285, currency:'USD',
+        category:'tops', image:'data:image/svg+xml;utf8,' + encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="600" height="600" fill="#1b1b1b"/><circle cx="300" cy="260" r="90" fill="#c0392b"/><rect x="250" y="360" width="100" height="120" fill="#e67e22"/></svg>') },
+      { id:'2', brand:'RIMOWA', title:'Original Check-In M', price:1120.54, currency:'USD',
+        category:'bags', image:'data:image/svg+xml;utf8,' + encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="600" height="600" fill="#f4f4f4"/><rect x="180" y="120" width="240" height="360" rx="16" fill="#c9ccce"/><rect x="180" y="200" width="240" height="8" fill="#9aa0a3"/><rect x="180" y="300" width="240" height="8" fill="#9aa0a3"/></svg>') },
+      { id:'3', brand:'FACE ROCK', title:'back graphic T-shirt', price:120, currency:'USD',
+        category:'tops', image:'data:image/svg+xml;utf8,' + encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="600" height="600" fill="#fafafa"/><path d="M180 200 L300 160 L420 200 L400 460 L200 460 Z" fill="#ededed"/><circle cx="300" cy="300" r="40" fill="#111"/></svg>') },
+      { id:'4', brand:'47 BRAND', title:'wool baseball cap', price:40, currency:'USD',
+        category:'accessories', image:'data:image/svg+xml;utf8,' + encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><rect width="600" height="600" fill="#fafafa"/><path d="M170 320 Q300 180 430 320 Z" fill="#e8a0a8"/><rect x="300" y="300" width="160" height="40" rx="20" fill="#e8a0a8"/></svg>') },
+    ]
+    let store = { wishlist_items: SEED }
+    window.chrome = {
+      storage: {
+        local: {
+          get: (key) => Promise.resolve({ [key]: store[key] }),
+          set: (obj) => { Object.assign(store, obj); return Promise.resolve() },
+        },
+        onChanged: { addListener: () => {} },
+      },
+      tabs: { create: () => {}, query: () => Promise.resolve([{ id: 1 }]) },
+      runtime: { getURL: (p) => p },
+      scripting: { executeScript: () => Promise.resolve([{ result: { html: '', url: '' } }]) },
+    }
+  </script>
+  <div class="page">
+    <div class="header">
+      <div>
+        <div class="title">Saved</div>
+        <div class="subtitle" id="count">0 items</div>
+      </div>
+      <div class="right">
+        <div class="total" id="total">$0</div>
+        <button class="menu" id="menu" title="Menu">☰</button>
+      </div>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+  <button class="fab" id="fab" title="Add the current tab">+</button>
+  <div class="toast" id="toast"></div>
+  <script type="module" src="../extension/gallery.js"></script>
+</body>
+</html>
