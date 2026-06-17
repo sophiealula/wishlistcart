@@ -14,7 +14,7 @@ document.getElementById('fab').onclick = async () => {
     renderCollection(els, items)
     showToast(toast, added ? 'Saved ✓' : 'Already saved')
   } catch {
-    showToast(toast, 'Open a product tab, then hit +')
+    showToast(toast, 'Couldn’t read a product page — open one in a tab, then hit +')
   }
 }
 

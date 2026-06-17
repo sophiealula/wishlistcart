@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatPrice, totalValue, countByCategory, filterByCategory } from '../extension/src/lib/items.js'
+import { formatPrice, totalValue, summarize, countByCategory, filterByCategory } from '../extension/src/lib/items.js'
 
 const items = [
   { title: 'Tee', price: 285, currency: 'USD', category: 'tops' },
@@ -27,5 +27,16 @@ describe('items helpers', () => {
   it('filters by category, "all" returns everything', () => {
     expect(filterByCategory(items, 'all').length).toBe(4)
     expect(filterByCategory(items, 'tops').length).toBe(1)
+  })
+  it('summarize totals a single currency directly', () => {
+    expect(summarize(items)).toEqual({ total: 1445.54, currency: 'USD', mixed: false })
+  })
+  it('summarize totals only the dominant currency when mixed', () => {
+    const mixed = [
+      { price: 100, currency: 'USD' },
+      { price: 50, currency: 'USD' },
+      { price: 80, currency: 'EUR' },
+    ]
+    expect(summarize(mixed)).toEqual({ total: 150, currency: 'USD', mixed: true })
   })
 })

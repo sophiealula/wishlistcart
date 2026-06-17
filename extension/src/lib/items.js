@@ -18,6 +18,24 @@ export function totalValue(items) {
   return Math.round(sum * 100) / 100
 }
 
+// Header total. Summing across currencies is meaningless, so when items use more
+// than one currency we total only the dominant (most common) one and report it.
+export function summarize(items) {
+  const priced = items.filter((i) => Number.isFinite(i.price))
+  const currencies = [...new Set(priced.map((i) => i.currency || 'USD'))]
+  if (currencies.length <= 1) {
+    return { total: totalValue(priced), currency: currencies[0] || 'USD', mixed: false }
+  }
+  const counts = {}
+  for (const i of priced) { const c = i.currency || 'USD'; counts[c] = (counts[c] || 0) + 1 }
+  const dominant = currencies.sort((a, b) => counts[b] - counts[a])[0]
+  return {
+    total: totalValue(priced.filter((i) => (i.currency || 'USD') === dominant)),
+    currency: dominant,
+    mixed: true,
+  }
+}
+
 export function countByCategory(items) {
   const counts = { all: items.length }
   for (const c of CATEGORIES) counts[c] = 0

@@ -2,7 +2,7 @@
 import { scrapeProduct } from './lib/scrape.js'
 import { classify, CATEGORIES } from './lib/classify.js'
 import { getItems, saveItem, removeItem } from './storage.js'
-import { formatPrice, totalValue, countByCategory, filterByCategory } from './lib/items.js'
+import { formatPrice, summarize, countByCategory, filterByCategory } from './lib/items.js'
 
 export const TAB_ORDER = ['all', ...CATEGORIES]
 export const LABELS = {
@@ -16,7 +16,8 @@ const state = { active: 'all' }
 // els: { count, total, tabs, grid }
 export function renderCollection(els, items) {
   els.count.textContent = `${items.length} item${items.length === 1 ? '' : 's'}`
-  els.total.textContent = formatPrice(totalValue(items), 'USD')
+  const { total, currency } = summarize(items)
+  els.total.textContent = formatPrice(total, currency)
   const counts = countByCategory(items)
 
   els.tabs.innerHTML = ''
