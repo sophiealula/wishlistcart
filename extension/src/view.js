@@ -67,16 +67,42 @@ export function showToast(el, msg) {
   setTimeout(() => el.classList.remove('show'), 1600)
 }
 
-// Scrape the active tab, classify, and save. Returns { added, items } or throws.
+// Pick the product tab to save: the most-recently-accessed http(s) tab. Works
+// from the popup (the product tab is still active) AND the gallery (whose own
+// chrome-extension:// tab is correctly skipped).
+async function pickTargetTab() {
+  const tabs = await chrome.tabs.query({})
+  const web = tabs
+    .filter((t) => t.url && /^https?:/i.test(t.url))
+    .sort((a, b) => (b.lastAccessed || 0) - (a.lastAccessed || 0))
+  return web[0]
+}
+
+// Runs IN the page (isolated world): grabs HTML + picks the largest real product
+// image using live naturalWidth/currentSrc, which a detached DOMParser lacks.
+function pageGrab() {
+  const JUNK = /logo|sprite|icon|badge|placeholder|b-corp|favicon|\.svg(\?|$)/i
+  let best = null, bestArea = 0
+  for (const img of document.images) {
+    let src = img.currentSrc || img.src
+    if (!src || src.startsWith('data:') || JUNK.test(src)) continue
+    try { src = new URL(src, location.href).href } catch { continue } // absolutize
+    const area = img.naturalWidth * img.naturalHeight
+    if (area > bestArea && area >= 5000) { bestArea = area; best = src }
+  }
+  return { html: document.documentElement.outerHTML, url: location.href, image: best }
+}
+
+// Scrape the target tab, classify, and save. Returns { added, items } or throws.
 export async function saveActiveTab() {
-  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true })
-  if (!tab || !tab.id) throw new Error('no active tab')
+  const tab = await pickTargetTab()
+  if (!tab || !tab.id) throw new Error('no product tab')
   const [{ result }] = await chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    func: () => ({ html: document.documentElement.outerHTML, url: location.href }),
+    func: pageGrab,
   })
   const parsed = new DOMParser().parseFromString(result.html, 'text/html')
-  const data = scrapeProduct(parsed)
+  const data = scrapeProduct(parsed, { image: result.image })
   data.url = result.url // DOMParser docs carry no location
   data.category = classify(`${data.title} ${data.brand || ''}`)
   return saveItem(data)

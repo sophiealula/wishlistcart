@@ -31,6 +31,17 @@ describe('classify', () => {
   it('prefers shoes over outerwear when both hint present', () => {
     expect(classify('Rain boots')).toBe('shoes')
   })
+  it('does not misread "short sleeve" tops as bottoms', () => {
+    expect(classify('Short sleeve t-shirt')).toBe('tops')
+    expect(classify('Cargo shorts')).toBe('bottoms')
+  })
+  it('does not match substrings (laptop != tops, topcoat = outerwear)', () => {
+    expect(classify('Laptop sleeve')).toBe('accessories')
+    expect(classify('Wool topcoat')).toBe('outerwear')
+  })
+  it('classifies henley as tops', () => {
+    expect(classify("Men's Henley")).toBe('tops')
+  })
   it('exports the canonical category list in display order', () => {
     expect(CATEGORIES).toEqual(['tops', 'bottoms', 'outerwear', 'shoes', 'bags', 'accessories'])
   })
