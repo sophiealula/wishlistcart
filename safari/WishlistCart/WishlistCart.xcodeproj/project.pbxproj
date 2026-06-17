@@ -7,86 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		783C2BD12FE34552009F2B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BD02FE34552009F2B54 /* AppDelegate.swift */; };
-		783C2BD32FE34552009F2B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BD22FE34552009F2B54 /* SceneDelegate.swift */; };
-		783C2BD62FE34552009F2B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BD42FE34552009F2B54 /* LaunchScreen.storyboard */; };
-		783C2BD92FE34552009F2B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BD72FE34552009F2B54 /* Main.storyboard */; };
-		783C2BE22FE34552009F2B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BE12FE34552009F2B54 /* AppDelegate.swift */; };
-		783C2BE52FE34552009F2B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BE32FE34552009F2B54 /* Main.storyboard */; };
-		783C2BEC2FE34552009F2B54 /* WishlistCart Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 783C2BEB2FE34552009F2B54 /* WishlistCart Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		783C2BF62FE34552009F2B54 /* WishlistCart Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 783C2BF52FE34552009F2B54 /* WishlistCart Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		783C2BFB2FE34552009F2B54 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC02FE34552009F2B54 /* Main.html */; };
-		783C2BFC2FE34552009F2B54 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC02FE34552009F2B54 /* Main.html */; };
-		783C2BFD2FE34552009F2B54 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC22FE34552009F2B54 /* Icon.png */; };
-		783C2BFE2FE34552009F2B54 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC22FE34552009F2B54 /* Icon.png */; };
-		783C2BFF2FE34552009F2B54 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC32FE34552009F2B54 /* Style.css */; };
-		783C2C002FE34552009F2B54 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC32FE34552009F2B54 /* Style.css */; };
-		783C2C012FE34552009F2B54 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC42FE34552009F2B54 /* Script.js */; };
-		783C2C022FE34552009F2B54 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC42FE34552009F2B54 /* Script.js */; };
-		783C2C032FE34552009F2B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BC52FE34552009F2B54 /* ViewController.swift */; };
-		783C2C042FE34552009F2B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BC52FE34552009F2B54 /* ViewController.swift */; };
-		783C2C052FE34552009F2B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC62FE34552009F2B54 /* Assets.xcassets */; };
-		783C2C062FE34552009F2B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783C2BC62FE34552009F2B54 /* Assets.xcassets */; };
-		783C2C072FE34552009F2B54 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BC82FE34552009F2B54 /* SafariWebExtensionHandler.swift */; };
-		783C2C082FE34552009F2B54 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C2BC82FE34552009F2B54 /* SafariWebExtensionHandler.swift */; };
-		783C2C242FE34553009F2B54 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1A2FE34553009F2B54 /* popup.js */; };
-		783C2C252FE34553009F2B54 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1B2FE34553009F2B54 /* styles.css */; };
-		783C2C262FE34553009F2B54 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1C2FE34553009F2B54 /* background.js */; };
-		783C2C272FE34553009F2B54 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1D2FE34553009F2B54 /* popup.html */; };
-		783C2C282FE34553009F2B54 /* gallery.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1E2FE34553009F2B54 /* gallery.js */; };
-		783C2C292FE34553009F2B54 /* gallery.html in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1F2FE34553009F2B54 /* gallery.html */; };
-		783C2C2A2FE34553009F2B54 /* dev-seed.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C202FE34553009F2B54 /* dev-seed.js */; };
-		783C2C2B2FE34553009F2B54 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C212FE34553009F2B54 /* icons */; };
-		783C2C2C2FE34553009F2B54 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C222FE34553009F2B54 /* manifest.json */; };
-		783C2C2D2FE34553009F2B54 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C232FE34553009F2B54 /* src */; };
-		783C2C2E2FE34553009F2B54 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1A2FE34553009F2B54 /* popup.js */; };
-		783C2C2F2FE34553009F2B54 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1B2FE34553009F2B54 /* styles.css */; };
-		783C2C302FE34553009F2B54 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1C2FE34553009F2B54 /* background.js */; };
-		783C2C312FE34553009F2B54 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1D2FE34553009F2B54 /* popup.html */; };
-		783C2C322FE34553009F2B54 /* gallery.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1E2FE34553009F2B54 /* gallery.js */; };
-		783C2C332FE34553009F2B54 /* gallery.html in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C1F2FE34553009F2B54 /* gallery.html */; };
-		783C2C342FE34553009F2B54 /* dev-seed.js in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C202FE34553009F2B54 /* dev-seed.js */; };
-		783C2C352FE34553009F2B54 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C212FE34553009F2B54 /* icons */; };
-		783C2C362FE34553009F2B54 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C222FE34553009F2B54 /* manifest.json */; };
-		783C2C372FE34553009F2B54 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 783C2C232FE34553009F2B54 /* src */; };
+		78BFB40B2FE34B1C00203738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BFB40A2FE34B1C00203738 /* AppDelegate.swift */; };
+		78BFB40F2FE34B1C00203738 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB40D2FE34B1C00203738 /* Main.html */; };
+		78BFB4112FE34B1C00203738 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4102FE34B1C00203738 /* Icon.png */; };
+		78BFB4132FE34B1C00203738 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4122FE34B1C00203738 /* Style.css */; };
+		78BFB4152FE34B1C00203738 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4142FE34B1C00203738 /* Script.js */; };
+		78BFB4172FE34B1C00203738 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BFB4162FE34B1C00203738 /* ViewController.swift */; };
+		78BFB41A2FE34B1C00203738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4182FE34B1C00203738 /* Main.storyboard */; };
+		78BFB41C2FE34B1C00203738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB41B2FE34B1C00203738 /* Assets.xcassets */; };
+		78BFB4232FE34B1C00203738 /* WishlistCart Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 78BFB4222FE34B1C00203738 /* WishlistCart Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		78BFB4282FE34B1C00203738 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BFB4272FE34B1C00203738 /* SafariWebExtensionHandler.swift */; };
+		78BFB43E2FE34B1C00203738 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4342FE34B1C00203738 /* popup.js */; };
+		78BFB43F2FE34B1C00203738 /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4352FE34B1C00203738 /* styles.css */; };
+		78BFB4402FE34B1C00203738 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4362FE34B1C00203738 /* background.js */; };
+		78BFB4412FE34B1C00203738 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4372FE34B1C00203738 /* popup.html */; };
+		78BFB4422FE34B1C00203738 /* gallery.js in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4382FE34B1C00203738 /* gallery.js */; };
+		78BFB4432FE34B1C00203738 /* gallery.html in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB4392FE34B1C00203738 /* gallery.html */; };
+		78BFB4442FE34B1C00203738 /* dev-seed.js in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB43A2FE34B1C00203738 /* dev-seed.js */; };
+		78BFB4452FE34B1C00203738 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB43B2FE34B1C00203738 /* icons */; };
+		78BFB4462FE34B1C00203738 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB43C2FE34B1C00203738 /* manifest.json */; };
+		78BFB4472FE34B1C00203738 /* src in Resources */ = {isa = PBXBuildFile; fileRef = 78BFB43D2FE34B1C00203738 /* src */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		783C2BED2FE34552009F2B54 /* PBXContainerItemProxy */ = {
+		78BFB4242FE34B1C00203738 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 783C2BBA2FE34552009F2B54 /* Project object */;
+			containerPortal = 78BFB3FF2FE34B1C00203738 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 783C2BEA2FE34552009F2B54;
-			remoteInfo = "WishlistCart Extension (iOS)";
-		};
-		783C2BF72FE34552009F2B54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 783C2BBA2FE34552009F2B54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 783C2BF42FE34552009F2B54;
-			remoteInfo = "WishlistCart Extension (macOS)";
+			remoteGlobalIDString = 78BFB4212FE34B1C00203738;
+			remoteInfo = "WishlistCart Extension";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		783C2C0E2FE34552009F2B54 /* Embed Foundation Extensions */ = {
+		78BFB42F2FE34B1C00203738 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				783C2BEC2FE34552009F2B54 /* WishlistCart Extension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2C152FE34552009F2B54 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				783C2BF62FE34552009F2B54 /* WishlistCart Extension.appex in Embed Foundation Extensions */,
+				78BFB4232FE34B1C00203738 /* WishlistCart Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,62 +54,40 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		783C2BC12FE34552009F2B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
-		783C2BC22FE34552009F2B54 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		783C2BC32FE34552009F2B54 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		783C2BC42FE34552009F2B54 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
-		783C2BC52FE34552009F2B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		783C2BC62FE34552009F2B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		783C2BC82FE34552009F2B54 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		783C2BCD2FE34552009F2B54 /* WishlistCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishlistCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		783C2BD02FE34552009F2B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		783C2BD22FE34552009F2B54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		783C2BD52FE34552009F2B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		783C2BD82FE34552009F2B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		783C2BDA2FE34552009F2B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783C2BDF2FE34552009F2B54 /* WishlistCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishlistCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		783C2BE12FE34552009F2B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		783C2BE42FE34552009F2B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		783C2BE62FE34552009F2B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783C2BEB2FE34552009F2B54 /* WishlistCart Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WishlistCart Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		783C2BF02FE34552009F2B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783C2BF52FE34552009F2B54 /* WishlistCart Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WishlistCart Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		783C2BFA2FE34552009F2B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		783C2C1A2FE34553009F2B54 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../../extension/popup.js; sourceTree = "<group>"; };
-		783C2C1B2FE34553009F2B54 /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = styles.css; path = ../../../extension/styles.css; sourceTree = "<group>"; };
-		783C2C1C2FE34553009F2B54 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../extension/background.js; sourceTree = "<group>"; };
-		783C2C1D2FE34553009F2B54 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../../extension/popup.html; sourceTree = "<group>"; };
-		783C2C1E2FE34553009F2B54 /* gallery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = gallery.js; path = ../../../extension/gallery.js; sourceTree = "<group>"; };
-		783C2C1F2FE34553009F2B54 /* gallery.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = gallery.html; path = ../../../extension/gallery.html; sourceTree = "<group>"; };
-		783C2C202FE34553009F2B54 /* dev-seed.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "dev-seed.js"; path = "../../../extension/dev-seed.js"; sourceTree = "<group>"; };
-		783C2C212FE34553009F2B54 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../extension/icons; sourceTree = "<group>"; };
-		783C2C222FE34553009F2B54 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../extension/manifest.json; sourceTree = "<group>"; };
-		783C2C232FE34553009F2B54 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../extension/src; sourceTree = "<group>"; };
+		78BFB4072FE34B1C00203738 /* WishlistCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishlistCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BFB40A2FE34B1C00203738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78BFB40E2FE34B1C00203738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		78BFB4102FE34B1C00203738 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		78BFB4122FE34B1C00203738 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		78BFB4142FE34B1C00203738 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		78BFB4162FE34B1C00203738 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78BFB4192FE34B1C00203738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78BFB41B2FE34B1C00203738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78BFB41D2FE34B1C00203738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78BFB4222FE34B1C00203738 /* WishlistCart Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WishlistCart Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BFB4272FE34B1C00203738 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		78BFB4292FE34B1C00203738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78BFB4342FE34B1C00203738 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../../extension/popup.js; sourceTree = "<group>"; };
+		78BFB4352FE34B1C00203738 /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = styles.css; path = ../../../extension/styles.css; sourceTree = "<group>"; };
+		78BFB4362FE34B1C00203738 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../extension/background.js; sourceTree = "<group>"; };
+		78BFB4372FE34B1C00203738 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../../extension/popup.html; sourceTree = "<group>"; };
+		78BFB4382FE34B1C00203738 /* gallery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = gallery.js; path = ../../../extension/gallery.js; sourceTree = "<group>"; };
+		78BFB4392FE34B1C00203738 /* gallery.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = gallery.html; path = ../../../extension/gallery.html; sourceTree = "<group>"; };
+		78BFB43A2FE34B1C00203738 /* dev-seed.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "dev-seed.js"; path = "../../../extension/dev-seed.js"; sourceTree = "<group>"; };
+		78BFB43B2FE34B1C00203738 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = ../../../extension/icons; sourceTree = "<group>"; };
+		78BFB43C2FE34B1C00203738 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../extension/manifest.json; sourceTree = "<group>"; };
+		78BFB43D2FE34B1C00203738 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../extension/src; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		783C2BCA2FE34552009F2B54 /* Frameworks */ = {
+		78BFB4042FE34B1C00203738 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783C2BDC2FE34552009F2B54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2BE82FE34552009F2B54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2BF22FE34552009F2B54 /* Frameworks */ = {
+		78BFB41F2FE34B1C00203738 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,389 +97,231 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		783C2BB92FE34552009F2B54 = {
+		78BFB3FE2FE34B1C00203738 = {
 			isa = PBXGroup;
 			children = (
-				783C2BBE2FE34552009F2B54 /* Shared (App) */,
-				783C2BC72FE34552009F2B54 /* Shared (Extension) */,
-				783C2BCF2FE34552009F2B54 /* iOS (App) */,
-				783C2BE02FE34552009F2B54 /* macOS (App) */,
-				783C2BEF2FE34552009F2B54 /* iOS (Extension) */,
-				783C2BF92FE34552009F2B54 /* macOS (Extension) */,
-				783C2BCE2FE34552009F2B54 /* Products */,
+				78BFB4092FE34B1C00203738 /* WishlistCart */,
+				78BFB4262FE34B1C00203738 /* WishlistCart Extension */,
+				78BFB4082FE34B1C00203738 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		783C2BBE2FE34552009F2B54 /* Shared (App) */ = {
+		78BFB4082FE34B1C00203738 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				783C2BC52FE34552009F2B54 /* ViewController.swift */,
-				783C2BC62FE34552009F2B54 /* Assets.xcassets */,
-				783C2BBF2FE34552009F2B54 /* Resources */,
-			);
-			path = "Shared (App)";
-			sourceTree = "<group>";
-		};
-		783C2BBF2FE34552009F2B54 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				783C2BC02FE34552009F2B54 /* Main.html */,
-				783C2BC22FE34552009F2B54 /* Icon.png */,
-				783C2BC32FE34552009F2B54 /* Style.css */,
-				783C2BC42FE34552009F2B54 /* Script.js */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		783C2BC72FE34552009F2B54 /* Shared (Extension) */ = {
-			isa = PBXGroup;
-			children = (
-				783C2C192FE34553009F2B54 /* Resources */,
-				783C2BC82FE34552009F2B54 /* SafariWebExtensionHandler.swift */,
-			);
-			path = "Shared (Extension)";
-			sourceTree = "<group>";
-		};
-		783C2BCE2FE34552009F2B54 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				783C2BCD2FE34552009F2B54 /* WishlistCart.app */,
-				783C2BDF2FE34552009F2B54 /* WishlistCart.app */,
-				783C2BEB2FE34552009F2B54 /* WishlistCart Extension.appex */,
-				783C2BF52FE34552009F2B54 /* WishlistCart Extension.appex */,
+				78BFB4072FE34B1C00203738 /* WishlistCart.app */,
+				78BFB4222FE34B1C00203738 /* WishlistCart Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		783C2BCF2FE34552009F2B54 /* iOS (App) */ = {
+		78BFB4092FE34B1C00203738 /* WishlistCart */ = {
 			isa = PBXGroup;
 			children = (
-				783C2BD02FE34552009F2B54 /* AppDelegate.swift */,
-				783C2BD22FE34552009F2B54 /* SceneDelegate.swift */,
-				783C2BD42FE34552009F2B54 /* LaunchScreen.storyboard */,
-				783C2BD72FE34552009F2B54 /* Main.storyboard */,
-				783C2BDA2FE34552009F2B54 /* Info.plist */,
+				78BFB40A2FE34B1C00203738 /* AppDelegate.swift */,
+				78BFB4162FE34B1C00203738 /* ViewController.swift */,
+				78BFB4182FE34B1C00203738 /* Main.storyboard */,
+				78BFB41B2FE34B1C00203738 /* Assets.xcassets */,
+				78BFB41D2FE34B1C00203738 /* Info.plist */,
+				78BFB40C2FE34B1C00203738 /* Resources */,
 			);
-			path = "iOS (App)";
+			path = WishlistCart;
 			sourceTree = "<group>";
 		};
-		783C2BE02FE34552009F2B54 /* macOS (App) */ = {
+		78BFB40C2FE34B1C00203738 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				783C2BE12FE34552009F2B54 /* AppDelegate.swift */,
-				783C2BE32FE34552009F2B54 /* Main.storyboard */,
-				783C2BE62FE34552009F2B54 /* Info.plist */,
+				78BFB40D2FE34B1C00203738 /* Main.html */,
+				78BFB4102FE34B1C00203738 /* Icon.png */,
+				78BFB4122FE34B1C00203738 /* Style.css */,
+				78BFB4142FE34B1C00203738 /* Script.js */,
 			);
-			path = "macOS (App)";
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		783C2BEF2FE34552009F2B54 /* iOS (Extension) */ = {
+		78BFB4262FE34B1C00203738 /* WishlistCart Extension */ = {
 			isa = PBXGroup;
 			children = (
-				783C2BF02FE34552009F2B54 /* Info.plist */,
+				78BFB4332FE34B1C00203738 /* Resources */,
+				78BFB4272FE34B1C00203738 /* SafariWebExtensionHandler.swift */,
+				78BFB4292FE34B1C00203738 /* Info.plist */,
 			);
-			path = "iOS (Extension)";
+			path = "WishlistCart Extension";
 			sourceTree = "<group>";
 		};
-		783C2BF92FE34552009F2B54 /* macOS (Extension) */ = {
+		78BFB4332FE34B1C00203738 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				783C2BFA2FE34552009F2B54 /* Info.plist */,
-			);
-			path = "macOS (Extension)";
-			sourceTree = "<group>";
-		};
-		783C2C192FE34553009F2B54 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				783C2C1A2FE34553009F2B54 /* popup.js */,
-				783C2C1B2FE34553009F2B54 /* styles.css */,
-				783C2C1C2FE34553009F2B54 /* background.js */,
-				783C2C1D2FE34553009F2B54 /* popup.html */,
-				783C2C1E2FE34553009F2B54 /* gallery.js */,
-				783C2C1F2FE34553009F2B54 /* gallery.html */,
-				783C2C202FE34553009F2B54 /* dev-seed.js */,
-				783C2C212FE34553009F2B54 /* icons */,
-				783C2C222FE34553009F2B54 /* manifest.json */,
-				783C2C232FE34553009F2B54 /* src */,
+				78BFB4342FE34B1C00203738 /* popup.js */,
+				78BFB4352FE34B1C00203738 /* styles.css */,
+				78BFB4362FE34B1C00203738 /* background.js */,
+				78BFB4372FE34B1C00203738 /* popup.html */,
+				78BFB4382FE34B1C00203738 /* gallery.js */,
+				78BFB4392FE34B1C00203738 /* gallery.html */,
+				78BFB43A2FE34B1C00203738 /* dev-seed.js */,
+				78BFB43B2FE34B1C00203738 /* icons */,
+				78BFB43C2FE34B1C00203738 /* manifest.json */,
+				78BFB43D2FE34B1C00203738 /* src */,
 			);
 			name = Resources;
-			path = "Shared (Extension)";
+			path = "WishlistCart Extension";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		783C2BCC2FE34552009F2B54 /* WishlistCart (iOS) */ = {
+		78BFB4062FE34B1C00203738 /* WishlistCart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 783C2C0F2FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart (iOS)" */;
+			buildConfigurationList = 78BFB4302FE34B1C00203738 /* Build configuration list for PBXNativeTarget "WishlistCart" */;
 			buildPhases = (
-				783C2BC92FE34552009F2B54 /* Sources */,
-				783C2BCA2FE34552009F2B54 /* Frameworks */,
-				783C2BCB2FE34552009F2B54 /* Resources */,
-				783C2C0E2FE34552009F2B54 /* Embed Foundation Extensions */,
+				78BFB4032FE34B1C00203738 /* Sources */,
+				78BFB4042FE34B1C00203738 /* Frameworks */,
+				78BFB4052FE34B1C00203738 /* Resources */,
+				78BFB42F2FE34B1C00203738 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				783C2BEE2FE34552009F2B54 /* PBXTargetDependency */,
+				78BFB4252FE34B1C00203738 /* PBXTargetDependency */,
 			);
-			name = "WishlistCart (iOS)";
+			name = WishlistCart;
 			packageProductDependencies = (
 			);
-			productName = "WishlistCart (iOS)";
-			productReference = 783C2BCD2FE34552009F2B54 /* WishlistCart.app */;
+			productName = WishlistCart;
+			productReference = 78BFB4072FE34B1C00203738 /* WishlistCart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		783C2BDE2FE34552009F2B54 /* WishlistCart (macOS) */ = {
+		78BFB4212FE34B1C00203738 /* WishlistCart Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 783C2C162FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart (macOS)" */;
+			buildConfigurationList = 78BFB42C2FE34B1C00203738 /* Build configuration list for PBXNativeTarget "WishlistCart Extension" */;
 			buildPhases = (
-				783C2BDB2FE34552009F2B54 /* Sources */,
-				783C2BDC2FE34552009F2B54 /* Frameworks */,
-				783C2BDD2FE34552009F2B54 /* Resources */,
-				783C2C152FE34552009F2B54 /* Embed Foundation Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				783C2BF82FE34552009F2B54 /* PBXTargetDependency */,
-			);
-			name = "WishlistCart (macOS)";
-			packageProductDependencies = (
-			);
-			productName = "WishlistCart (macOS)";
-			productReference = 783C2BDF2FE34552009F2B54 /* WishlistCart.app */;
-			productType = "com.apple.product-type.application";
-		};
-		783C2BEA2FE34552009F2B54 /* WishlistCart Extension (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 783C2C0B2FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart Extension (iOS)" */;
-			buildPhases = (
-				783C2BE72FE34552009F2B54 /* Sources */,
-				783C2BE82FE34552009F2B54 /* Frameworks */,
-				783C2BE92FE34552009F2B54 /* Resources */,
+				78BFB41E2FE34B1C00203738 /* Sources */,
+				78BFB41F2FE34B1C00203738 /* Frameworks */,
+				78BFB4202FE34B1C00203738 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "WishlistCart Extension (iOS)";
+			name = "WishlistCart Extension";
 			packageProductDependencies = (
 			);
-			productName = "WishlistCart Extension (iOS)";
-			productReference = 783C2BEB2FE34552009F2B54 /* WishlistCart Extension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		783C2BF42FE34552009F2B54 /* WishlistCart Extension (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 783C2C122FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart Extension (macOS)" */;
-			buildPhases = (
-				783C2BF12FE34552009F2B54 /* Sources */,
-				783C2BF22FE34552009F2B54 /* Frameworks */,
-				783C2BF32FE34552009F2B54 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "WishlistCart Extension (macOS)";
-			packageProductDependencies = (
-			);
-			productName = "WishlistCart Extension (macOS)";
-			productReference = 783C2BF52FE34552009F2B54 /* WishlistCart Extension.appex */;
+			productName = "WishlistCart Extension";
+			productReference = 78BFB4222FE34B1C00203738 /* WishlistCart Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		783C2BBA2FE34552009F2B54 /* Project object */ = {
+		78BFB3FF2FE34B1C00203738 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
-					783C2BCC2FE34552009F2B54 = {
+					78BFB4062FE34B1C00203738 = {
 						CreatedOnToolsVersion = 26.5;
 					};
-					783C2BDE2FE34552009F2B54 = {
-						CreatedOnToolsVersion = 26.5;
-					};
-					783C2BEA2FE34552009F2B54 = {
-						CreatedOnToolsVersion = 26.5;
-					};
-					783C2BF42FE34552009F2B54 = {
+					78BFB4212FE34B1C00203738 = {
 						CreatedOnToolsVersion = 26.5;
 					};
 				};
 			};
-			buildConfigurationList = 783C2BBD2FE34552009F2B54 /* Build configuration list for PBXProject "WishlistCart" */;
+			buildConfigurationList = 78BFB4022FE34B1C00203738 /* Build configuration list for PBXProject "WishlistCart" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 783C2BB92FE34552009F2B54;
+			mainGroup = 78BFB3FE2FE34B1C00203738;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 783C2BCE2FE34552009F2B54 /* Products */;
+			productRefGroup = 78BFB4082FE34B1C00203738 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				783C2BCC2FE34552009F2B54 /* WishlistCart (iOS) */,
-				783C2BDE2FE34552009F2B54 /* WishlistCart (macOS) */,
-				783C2BEA2FE34552009F2B54 /* WishlistCart Extension (iOS) */,
-				783C2BF42FE34552009F2B54 /* WishlistCart Extension (macOS) */,
+				78BFB4062FE34B1C00203738 /* WishlistCart */,
+				78BFB4212FE34B1C00203738 /* WishlistCart Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		783C2BCB2FE34552009F2B54 /* Resources */ = {
+		78BFB4052FE34B1C00203738 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783C2BFD2FE34552009F2B54 /* Icon.png in Resources */,
-				783C2BD62FE34552009F2B54 /* LaunchScreen.storyboard in Resources */,
-				783C2BFB2FE34552009F2B54 /* Main.html in Resources */,
-				783C2C012FE34552009F2B54 /* Script.js in Resources */,
-				783C2C052FE34552009F2B54 /* Assets.xcassets in Resources */,
-				783C2BD92FE34552009F2B54 /* Main.storyboard in Resources */,
-				783C2BFF2FE34552009F2B54 /* Style.css in Resources */,
+				78BFB4112FE34B1C00203738 /* Icon.png in Resources */,
+				78BFB41A2FE34B1C00203738 /* Main.storyboard in Resources */,
+				78BFB4152FE34B1C00203738 /* Script.js in Resources */,
+				78BFB40F2FE34B1C00203738 /* Main.html in Resources */,
+				78BFB41C2FE34B1C00203738 /* Assets.xcassets in Resources */,
+				78BFB4132FE34B1C00203738 /* Style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783C2BDD2FE34552009F2B54 /* Resources */ = {
+		78BFB4202FE34B1C00203738 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783C2BFE2FE34552009F2B54 /* Icon.png in Resources */,
-				783C2C002FE34552009F2B54 /* Style.css in Resources */,
-				783C2BE52FE34552009F2B54 /* Main.storyboard in Resources */,
-				783C2C022FE34552009F2B54 /* Script.js in Resources */,
-				783C2C062FE34552009F2B54 /* Assets.xcassets in Resources */,
-				783C2BFC2FE34552009F2B54 /* Main.html in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2BE92FE34552009F2B54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783C2C2E2FE34553009F2B54 /* popup.js in Resources */,
-				783C2C352FE34553009F2B54 /* icons in Resources */,
-				783C2C312FE34553009F2B54 /* popup.html in Resources */,
-				783C2C302FE34553009F2B54 /* background.js in Resources */,
-				783C2C362FE34553009F2B54 /* manifest.json in Resources */,
-				783C2C332FE34553009F2B54 /* gallery.html in Resources */,
-				783C2C322FE34553009F2B54 /* gallery.js in Resources */,
-				783C2C2F2FE34553009F2B54 /* styles.css in Resources */,
-				783C2C342FE34553009F2B54 /* dev-seed.js in Resources */,
-				783C2C372FE34553009F2B54 /* src in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2BF32FE34552009F2B54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783C2C242FE34553009F2B54 /* popup.js in Resources */,
-				783C2C2B2FE34553009F2B54 /* icons in Resources */,
-				783C2C272FE34553009F2B54 /* popup.html in Resources */,
-				783C2C262FE34553009F2B54 /* background.js in Resources */,
-				783C2C2C2FE34553009F2B54 /* manifest.json in Resources */,
-				783C2C292FE34553009F2B54 /* gallery.html in Resources */,
-				783C2C282FE34553009F2B54 /* gallery.js in Resources */,
-				783C2C252FE34553009F2B54 /* styles.css in Resources */,
-				783C2C2A2FE34553009F2B54 /* dev-seed.js in Resources */,
-				783C2C2D2FE34553009F2B54 /* src in Resources */,
+				78BFB43E2FE34B1C00203738 /* popup.js in Resources */,
+				78BFB4452FE34B1C00203738 /* icons in Resources */,
+				78BFB4412FE34B1C00203738 /* popup.html in Resources */,
+				78BFB4402FE34B1C00203738 /* background.js in Resources */,
+				78BFB4462FE34B1C00203738 /* manifest.json in Resources */,
+				78BFB4432FE34B1C00203738 /* gallery.html in Resources */,
+				78BFB4422FE34B1C00203738 /* gallery.js in Resources */,
+				78BFB43F2FE34B1C00203738 /* styles.css in Resources */,
+				78BFB4442FE34B1C00203738 /* dev-seed.js in Resources */,
+				78BFB4472FE34B1C00203738 /* src in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		783C2BC92FE34552009F2B54 /* Sources */ = {
+		78BFB4032FE34B1C00203738 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783C2C032FE34552009F2B54 /* ViewController.swift in Sources */,
-				783C2BD12FE34552009F2B54 /* AppDelegate.swift in Sources */,
-				783C2BD32FE34552009F2B54 /* SceneDelegate.swift in Sources */,
+				78BFB4172FE34B1C00203738 /* ViewController.swift in Sources */,
+				78BFB40B2FE34B1C00203738 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		783C2BDB2FE34552009F2B54 /* Sources */ = {
+		78BFB41E2FE34B1C00203738 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783C2C042FE34552009F2B54 /* ViewController.swift in Sources */,
-				783C2BE22FE34552009F2B54 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2BE72FE34552009F2B54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783C2C072FE34552009F2B54 /* SafariWebExtensionHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783C2BF12FE34552009F2B54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783C2C082FE34552009F2B54 /* SafariWebExtensionHandler.swift in Sources */,
+				78BFB4282FE34B1C00203738 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		783C2BEE2FE34552009F2B54 /* PBXTargetDependency */ = {
+		78BFB4252FE34B1C00203738 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 783C2BEA2FE34552009F2B54 /* WishlistCart Extension (iOS) */;
-			targetProxy = 783C2BED2FE34552009F2B54 /* PBXContainerItemProxy */;
-		};
-		783C2BF82FE34552009F2B54 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 783C2BF42FE34552009F2B54 /* WishlistCart Extension (macOS) */;
-			targetProxy = 783C2BF72FE34552009F2B54 /* PBXContainerItemProxy */;
+			target = 78BFB4212FE34B1C00203738 /* WishlistCart Extension */;
+			targetProxy = 78BFB4242FE34B1C00203738 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		783C2BC02FE34552009F2B54 /* Main.html */ = {
+		78BFB40D2FE34B1C00203738 /* Main.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				783C2BC12FE34552009F2B54 /* Base */,
+				78BFB40E2FE34B1C00203738 /* Base */,
 			);
 			name = Main.html;
 			sourceTree = "<group>";
 		};
-		783C2BD42FE34552009F2B54 /* LaunchScreen.storyboard */ = {
+		78BFB4182FE34B1C00203738 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				783C2BD52FE34552009F2B54 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		783C2BD72FE34552009F2B54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				783C2BD82FE34552009F2B54 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		783C2BE32FE34552009F2B54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				783C2BE42FE34552009F2B54 /* Base */,
+				78BFB4192FE34B1C00203738 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -549,7 +329,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		783C2C092FE34552009F2B54 /* Debug */ = {
+		78BFB42A2FE34B1C00203738 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -602,15 +382,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		783C2C0A2FE34552009F2B54 /* Release */ = {
+		78BFB42B2FE34B1C00203738 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -657,161 +439,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
-		783C2C0C2FE34552009F2B54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "WishlistCart Extension";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart.Extension;
-				PRODUCT_NAME = "WishlistCart Extension";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		783C2C0D2FE34552009F2B54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "WishlistCart Extension";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart.Extension;
-				PRODUCT_NAME = "WishlistCart Extension";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		783C2C102FE34552009F2B54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WishlistCart;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-					"-framework",
-					WebKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart;
-				PRODUCT_NAME = WishlistCart;
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		783C2C112FE34552009F2B54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WishlistCart;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"-framework",
-					SafariServices,
-					"-framework",
-					WebKit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart;
-				PRODUCT_NAME = WishlistCart;
-				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		783C2C132FE34552009F2B54 /* Debug */ = {
+		78BFB42D2FE34B1C00203738 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -820,7 +456,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_FILE = "WishlistCart Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "WishlistCart Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -834,9 +470,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart.Extension;
-				PRODUCT_NAME = "WishlistCart Extension";
-				SDKROOT = macosx;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.WishlistCart.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -846,7 +481,7 @@
 			};
 			name = Debug;
 		};
-		783C2C142FE34552009F2B54 /* Release */ = {
+		78BFB42E2FE34B1C00203738 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -855,7 +490,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_FILE = "WishlistCart Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "WishlistCart Extension";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -869,9 +504,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart.Extension;
-				PRODUCT_NAME = "WishlistCart Extension";
-				SDKROOT = macosx;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.WishlistCart.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -881,27 +515,28 @@
 			};
 			name = Release;
 		};
-		783C2C172FE34552009F2B54 /* Debug */ = {
+		78BFB4312FE34B1C00203738 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_FILE = WishlistCart/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WishlistCart;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -909,10 +544,9 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart;
-				PRODUCT_NAME = WishlistCart;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.WishlistCart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = macosx;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -922,27 +556,28 @@
 			};
 			name = Debug;
 		};
-		783C2C182FE34552009F2B54 /* Release */ = {
+		78BFB4322FE34B1C00203738 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_FILE = WishlistCart/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = WishlistCart;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -950,10 +585,9 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.wishlistcart;
-				PRODUCT_NAME = WishlistCart;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.2389.sophie.WishlistCart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = macosx;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -966,52 +600,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		783C2BBD2FE34552009F2B54 /* Build configuration list for PBXProject "WishlistCart" */ = {
+		78BFB4022FE34B1C00203738 /* Build configuration list for PBXProject "WishlistCart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				783C2C092FE34552009F2B54 /* Debug */,
-				783C2C0A2FE34552009F2B54 /* Release */,
+				78BFB42A2FE34B1C00203738 /* Debug */,
+				78BFB42B2FE34B1C00203738 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		783C2C0B2FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart Extension (iOS)" */ = {
+		78BFB42C2FE34B1C00203738 /* Build configuration list for PBXNativeTarget "WishlistCart Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				783C2C0C2FE34552009F2B54 /* Debug */,
-				783C2C0D2FE34552009F2B54 /* Release */,
+				78BFB42D2FE34B1C00203738 /* Debug */,
+				78BFB42E2FE34B1C00203738 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		783C2C0F2FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart (iOS)" */ = {
+		78BFB4302FE34B1C00203738 /* Build configuration list for PBXNativeTarget "WishlistCart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				783C2C102FE34552009F2B54 /* Debug */,
-				783C2C112FE34552009F2B54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		783C2C122FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart Extension (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				783C2C132FE34552009F2B54 /* Debug */,
-				783C2C142FE34552009F2B54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		783C2C162FE34552009F2B54 /* Build configuration list for PBXNativeTarget "WishlistCart (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				783C2C172FE34552009F2B54 /* Debug */,
-				783C2C182FE34552009F2B54 /* Release */,
+				78BFB4312FE34B1C00203738 /* Debug */,
+				78BFB4322FE34B1C00203738 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 783C2BBA2FE34552009F2B54 /* Project object */;
+	rootObject = 78BFB3FF2FE34B1C00203738 /* Project object */;
 }

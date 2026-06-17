@@ -1,6 +1,6 @@
 //
 //  SafariWebExtensionHandler.swift
-//  Shared (Extension)
+//  WishlistCart Extension
 //
 //  Created by Sophie A Davis on 6/17/26.
 //

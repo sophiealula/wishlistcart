@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  macOS (App)
+//  WishlistCart
 //
 //  Created by Sophie A Davis on 6/17/26.
 //
