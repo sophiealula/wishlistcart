@@ -20,6 +20,10 @@ export function renderCollection(els, items) {
   els.total.textContent = formatPrice(total, currency)
   const counts = countByCategory(items)
 
+  // If the active filter went empty (e.g. last item removed), fall back to All
+  // BEFORE rendering tabs so the All tab picks up the .active highlight.
+  if (state.active !== 'all' && counts[state.active] === 0) state.active = 'all'
+
   els.tabs.innerHTML = ''
   for (const key of TAB_ORDER) {
     if (key !== 'all' && counts[key] === 0) continue // hide empty categories
@@ -29,8 +33,6 @@ export function renderCollection(els, items) {
     b.onclick = () => { state.active = key; renderCollection(els, items) }
     els.tabs.appendChild(b)
   }
-  // If the active filter went empty (e.g. last item removed), fall back to All.
-  if (state.active !== 'all' && counts[state.active] === 0) state.active = 'all'
 
   els.grid.innerHTML = ''
   const shown = filterByCategory(items, state.active)
@@ -65,7 +67,8 @@ export function renderCollection(els, items) {
 export function showToast(el, msg) {
   el.textContent = msg
   el.classList.add('show')
-  setTimeout(() => el.classList.remove('show'), 1600)
+  clearTimeout(el._toastTimer) // rapid re-toasts shouldn't cut the new one short
+  el._toastTimer = setTimeout(() => el.classList.remove('show'), 1600)
 }
 
 // Pick the product tab to save: the most-recently-accessed http(s) tab. Works

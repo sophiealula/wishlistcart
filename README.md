@@ -49,5 +49,13 @@ npm test          # unit tests for scrape / classify / totals logic
 ```
 
 `dev/preview-gallery.html` renders the gallery with mock data + `chrome` stubs so
-you can iterate on layout without loading the extension (`node dev/shot.mjs`
-screenshots it).
+you can iterate on layout without loading the extension. It uses ES module
+imports, so it needs a local server (not `file://`):
+
+```bash
+python3 -m http.server 8123   # from repo root
+node dev/shot.mjs             # screenshots it to dev/gallery.png
+```
+
+`dev/integration.mjs` loads the real extension via `--load-extension`, which
+Chrome 137+ removed — it only works on older Chrome.
