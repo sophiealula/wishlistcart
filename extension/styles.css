@@ -93,6 +93,13 @@ body { margin: 0; font-family: var(--font); color: var(--ink); background: var(-
 .page .tabs button { font-size: 14px; padding-bottom: 14px; }
 .page .grid { grid-template-columns: repeat(3, 1fr); gap: 30px 24px; padding: 22px 18px 120px; }
 @media (max-width: 720px) { .page .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) {
+  .page { padding: 0; }
+  .page .header { padding: 20px 14px 8px; }
+  .page .header .title, .page .header .total { font-size: 18px; }
+  .page .tabs { padding: 6px 14px 0; gap: 16px; }
+  .page .grid { gap: 20px 12px; padding: 16px 14px 110px; }
+}
 .fab { position: fixed; right: 28px; bottom: 28px; width: 52px; height: 52px; border-radius: 50%;
   border: none; background: var(--ink); color: #fff; font-size: 26px; line-height: 1; cursor: pointer;
   box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
