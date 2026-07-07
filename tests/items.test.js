@@ -40,3 +40,20 @@ describe('items helpers', () => {
     expect(summarize(mixed)).toEqual({ total: 150, currency: 'USD', mixed: true })
   })
 })
+
+describe('quantity-aware totals', () => {
+  it('multiplies price by qty, treating missing qty as 1', () => {
+    expect(totalValue([
+      { price: 10, qty: 3 },
+      { price: 5 },
+      { price: 2, qty: null },
+    ])).toBe(37)
+  })
+  it('summarize counts qty into the dominant-currency total', () => {
+    const { total } = summarize([
+      { price: 10, qty: 2, currency: 'USD' },
+      { price: 1, currency: 'USD' },
+    ])
+    expect(total).toBe(21)
+  })
+})

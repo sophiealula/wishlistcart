@@ -14,7 +14,11 @@ export function formatPrice(price, currency = 'USD') {
 }
 
 export function totalValue(items) {
-  const sum = items.reduce((acc, it) => acc + (Number.isFinite(it.price) ? it.price : 0), 0)
+  const sum = items.reduce((acc, it) => {
+    if (!Number.isFinite(it.price)) return acc
+    const qty = Number.isFinite(it.qty) && it.qty > 0 ? it.qty : 1
+    return acc + it.price * qty
+  }, 0)
   return Math.round(sum * 100) / 100
 }
 
