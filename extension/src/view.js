@@ -217,6 +217,7 @@ export async function saveActiveTab() {
   const data = scrapeProduct(parsed, { image: result.image })
   data.url = result.url // DOMParser docs carry no location
   data.category = classify(`${data.title} ${data.brand || ''}`)
+  data.qty = 1
   return saveItem(data)
 }
 
