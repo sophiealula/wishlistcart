@@ -5,3 +5,4 @@ safari/build/
 xcuserdata/
 *.xcuserstate
 .DS_Store
+core/target/
