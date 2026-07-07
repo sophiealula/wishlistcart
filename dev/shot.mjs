@@ -12,10 +12,33 @@ await page.goto(`${base}/dev/preview-gallery.html`, { waitUntil: 'networkidle' }
 await page.waitForSelector('.card')
 await page.screenshot({ path: 'dev/gallery.png' })
 
-const total = await page.textContent('#total')
-const count = await page.textContent('#count')
-const cards = await page.$$eval('.card .name', (n) => n.map((x) => x.textContent))
-const tabs = await page.$$eval('.tabs button', (n) => n.map((x) => x.textContent))
+const readState = async () => ({
+  total: await page.textContent('#total'),
+  count: await page.textContent('#count'),
+  cards: await page.$$eval('.card .name', (n) => n.map((x) => x.textContent)),
+  tabs: await page.$$eval('.tabs button', (n) => n.map((x) => x.textContent)),
+})
 
-console.log(JSON.stringify({ total, count, cards, tabs, errors }, null, 2))
+const before = await readState()
+
+await page.locator('.card').first().hover()
+await page.locator('.card .edit').first().click()
+await page.fill('.editor-panel input[name="title"]', 'edited floral T-shirt')
+await page.fill('.editor-panel input[name="price"]', '$300')
+await page.selectOption('.editor-panel select[name="category"]', 'outerwear')
+await page.click('.editor-actions .primary')
+await page.waitForSelector('.editor-shell', { state: 'hidden' })
+
+const after = await readState()
+
+if (errors.length) throw new Error(`Preview console errors: ${errors.join('; ')}`)
+if (before.total !== '$1,565.54' || before.count !== '4 items') {
+  throw new Error(`Unexpected initial state: ${JSON.stringify(before)}`)
+}
+if (after.total !== '$1,580.54' || after.cards[0] !== 'edited floral T-shirt' ||
+    !after.tabs.includes('Outerwear')) {
+  throw new Error(`Edit smoke test failed: ${JSON.stringify(after)}`)
+}
+
+console.log(JSON.stringify({ before, after, errors }, null, 2))
 await browser.close()

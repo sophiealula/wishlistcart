@@ -5,16 +5,16 @@ const els = {
   total: document.getElementById('total'),
   tabs: document.getElementById('tabs'),
   grid: document.getElementById('grid'),
+  toast: document.getElementById('toast'),
 }
-const toast = document.getElementById('toast')
 
 document.getElementById('fab').onclick = async () => {
   try {
     const { added, items } = await saveActiveTab()
     renderCollection(els, items)
-    showToast(toast, added ? 'Saved ✓' : 'Already saved')
+    showToast(els.toast, added ? 'Saved ✓' : 'Already saved')
   } catch {
-    showToast(toast, 'Couldn’t read a product page — open one in a tab, then hit +')
+    showToast(els.toast, 'Couldn’t read a product page — open one in a tab, then hit +')
   }
 }
 

@@ -5,8 +5,8 @@ const els = {
   total: document.getElementById('total'),
   tabs: document.getElementById('tabs'),
   grid: document.getElementById('grid'),
+  toast: document.getElementById('toast'),
 }
-const toast = document.getElementById('toast')
 const saveBtn = document.getElementById('save')
 
 saveBtn.onclick = async () => {
@@ -15,10 +15,10 @@ saveBtn.onclick = async () => {
   try {
     const { added, items } = await saveActiveTab()
     renderCollection(els, items)
-    showToast(toast, added ? 'Saved ✓' : 'Already saved')
+    showToast(els.toast, added ? 'Saved ✓' : 'Already saved')
   } catch (err) {
     console.error(err)
-    showToast(toast, 'Could not read this page')
+    showToast(els.toast, 'Could not read this page')
   } finally {
     saveBtn.disabled = false
     saveBtn.textContent = 'Save this page'

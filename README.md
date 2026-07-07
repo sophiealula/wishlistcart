@@ -16,6 +16,9 @@ Capture is automatic: it reads JSON-LD `Product` schema → Open Graph tags → 
 fallbacks to fill image / brand / title / price, and a keyword classifier picks
 the category. Nothing to type.
 
+When a scrape gets something wrong, hover a card and hit ✎ to edit any field
+(title / brand / price / currency / category / image / URL) in place.
+
 ## Load it in Chrome (instant)
 
 1. `chrome://extensions` → turn on **Developer mode** (top right).
