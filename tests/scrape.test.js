@@ -138,4 +138,21 @@ describe('scrapeProduct', () => {
                   'https://shop.example.com/p/999')
     expect(scrapeProduct(d).url).toBe('https://shop.example.com/p/999')
   })
+
+  it('captures color and size from JSON-LD when present', () => {
+    const d = doc(`<html><head><script type="application/ld+json">
+      {"@type":"Product","name":"Trail runner","color":"Moss",
+       "size":"W9","offers":{"price":"120","priceCurrency":"USD"}}
+      </script></head><body></body></html>`)
+    const r = scrapeProduct(d)
+    expect(r.color).toBe('Moss')
+    expect(r.size).toBe('W9')
+  })
+
+  it('leaves color/size null when absent', () => {
+    const d = doc(`<html><head><title>Plain Tee</title></head><body></body></html>`)
+    const r = scrapeProduct(d)
+    expect(r.color).toBe(null)
+    expect(r.size).toBe(null)
+  })
 })

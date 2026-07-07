@@ -85,6 +85,8 @@ function fromJsonLd(d) {
     image: firstString(p.image),
     price: priceFromOffers(off),
     currency: currencyFromOffers(off),
+    color: firstString(p.color),
+    size: firstString(p.size),
   }
 }
 
@@ -180,6 +182,8 @@ export function scrapeProduct(d, hints = {}) {
     price: pick('price'),
     currency: pick('currency') || 'USD',
     image: pickImage(imageCandidates),
+    color: pick('color'),
+    size: pick('size'),
     url: (d.location && d.location.href) || d.URL || null,
   }
 }
