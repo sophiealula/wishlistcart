@@ -2,6 +2,42 @@ import { CATEGORIES } from './lib/classify.js'
 import { parsePrice } from './lib/scrape.js'
 
 const KEY = 'wishlist_items'
+const MIGRATED_KEY = 'wishlist_migrated_to_host'
+
+// Native-messaging host (Sophie's Macs): owns the iCloud-synced wishlist file.
+// When it isn't installed (friends' machines), everything falls back to
+// chrome.storage.local exactly as before.
+const HOST = 'ai.2389.sophie.wishlistcart'
+let hostAvailable = null
+
+async function hostCall(msg) {
+  const res = await chrome.runtime.sendNativeMessage(HOST, msg)
+  if (!res || res.ok !== true) throw new Error((res && res.error) || 'host error')
+  return res
+}
+
+async function useHost() {
+  if (hostAvailable != null) return hostAvailable
+  try {
+    await hostCall({ op: 'ping' })
+    hostAvailable = true
+    await migrateLocalOnce()
+  } catch {
+    hostAvailable = false
+  }
+  return hostAvailable
+}
+
+// One-time: move any browser-local items into the shared file, then clear
+// local so the file is the single source of truth.
+async function migrateLocalOnce() {
+  const out = await chrome.storage.local.get([KEY, MIGRATED_KEY])
+  if (out[MIGRATED_KEY]) return
+  const items = out[KEY] || []
+  if (items.length) await hostCall({ op: 'import', items })
+  await chrome.storage.local.set({ [MIGRATED_KEY]: true })
+  await chrome.storage.local.remove(KEY)
+}
 
 const TRACKING = /^(utm_|fbclid|gclid|mc_|ref|ref_|_branch|igshid)/i
 const EDITABLE_FIELDS = ['title', 'brand', 'price', 'currency', 'category', 'image', 'url', 'qty', 'color', 'size']
@@ -27,11 +63,16 @@ function newId() {
 }
 
 export async function getItems() {
+  if (await useHost()) return (await hostCall({ op: 'getItems' })).items
   const out = await chrome.storage.local.get(KEY)
   return out[KEY] || []
 }
 
 export async function saveItem(item) {
+  if (await useHost()) {
+    const res = await hostCall({ op: 'saveItem', item })
+    return { added: res.added, items: res.items }
+  }
   const items = await getItems()
   const key = normalizeUrl(item.url)
   if (key && items.some((i) => normalizeUrl(i.url) === key)) return { added: false, items }
@@ -42,6 +83,7 @@ export async function saveItem(item) {
 }
 
 export async function removeItem(id) {
+  if (await useHost()) return (await hostCall({ op: 'removeItem', id })).items
   const items = await getItems()
   const next = items.filter((i) => i.id !== id)
   await chrome.storage.local.set({ [KEY]: next })
@@ -79,6 +121,9 @@ export function normalizeItemPatch(patch) {
 }
 
 export async function updateItem(id, patch) {
+  if (await useHost()) {
+    return (await hostCall({ op: 'updateItem', id, patch: normalizeItemPatch(patch) })).items
+  }
   const items = await getItems()
   const clean = normalizeItemPatch(patch)
   let changed = false

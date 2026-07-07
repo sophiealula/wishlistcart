@@ -3,7 +3,7 @@
   "name": "WishlistCart",
   "version": "0.2.0",
   "description": "Save products from across the web with a click.",
-  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "nativeMessaging"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",

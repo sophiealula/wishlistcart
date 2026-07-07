@@ -111,3 +111,81 @@ describe('updateItem', () => {
     expect(globalThis.chrome.storage.local.set).not.toHaveBeenCalled()
   })
 })
+
+describe('native host adapter', () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+    vi.resetModules()
+    delete globalThis.chrome
+  })
+
+  // Fresh module per test so the cached host-availability probe resets.
+  const freshStorage = () => import('../extension/src/storage.js?' + Math.random())
+
+  function mockChrome({ hostResponses, local = {} }) {
+    let store = { ...local }
+    globalThis.chrome = {
+      runtime: {
+        sendNativeMessage: vi.fn(async (_host, msg) => {
+          const handler = hostResponses[msg.op]
+          if (!handler) throw new Error('unexpected op ' + msg.op)
+          return typeof handler === 'function' ? handler(msg) : handler
+        }),
+      },
+      storage: {
+        local: {
+          get: vi.fn(async (keys) => {
+            const out = {}
+            for (const k of Array.isArray(keys) ? keys : [keys]) {
+              if (k in store) out[k] = store[k]
+            }
+            return out
+          }),
+          set: vi.fn(async (obj) => { Object.assign(store, obj) }),
+          remove: vi.fn(async (k) => { delete store[k] }),
+        },
+      },
+    }
+    return { store: () => store }
+  }
+
+  it('routes through the host when ping succeeds, with normalized patches', async () => {
+    const calls = []
+    mockChrome({ hostResponses: {
+      ping: { ok: true, pong: true },
+      getItems: { ok: true, items: [{ id: 'h1', title: 'From host' }] },
+      updateItem: (msg) => { calls.push(msg); return { ok: true, items: [] } },
+    } })
+    const { getItems, updateItem } = await freshStorage()
+    expect(await getItems()).toEqual([{ id: 'h1', title: 'From host' }])
+    await updateItem('h1', { title: '  Spaced  ', qty: '4' })
+    expect(calls[0].patch).toEqual({ title: 'Spaced', qty: 4 })
+  })
+
+  it('falls back to local storage when the host is unavailable', async () => {
+    mockChrome({
+      hostResponses: { ping: () => { throw new Error('no host') } },
+      local: { wishlist_items: [{ id: 'l1', title: 'Local' }] },
+    })
+    const { getItems } = await freshStorage()
+    expect(await getItems()).toEqual([{ id: 'l1', title: 'Local' }])
+  })
+
+  it('migrates browser-local items to the host once, then clears them', async () => {
+    const imports = []
+    const mock = mockChrome({
+      hostResponses: {
+        ping: { ok: true, pong: true },
+        import: (msg) => { imports.push(msg.items); return { ok: true, items: msg.items } },
+        getItems: { ok: true, items: [] },
+      },
+      local: { wishlist_items: [{ id: 'l1', title: 'Migrate me' }] },
+    })
+    const { getItems } = await freshStorage()
+    await getItems()
+    await getItems()
+    expect(imports).toEqual([[{ id: 'l1', title: 'Migrate me' }]])
+    expect(mock.store().wishlist_items).toBeUndefined()
+    expect(mock.store().wishlist_migrated_to_host).toBe(true)
+  })
+})
