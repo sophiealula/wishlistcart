@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sophie’s Wishlist</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* read-only page: no hover chrome, cards link out */
+    .card { cursor: default; }
+    a.card { text-decoration: none; color: inherit; cursor: pointer; }
+    .updated { text-align: center; color: var(--muted); font-size: 11px; padding: 0 18px 40px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div>
+        <div class="title">Sophie’s Wishlist</div>
+        <div class="subtitle" id="count">…</div>
+      </div>
+      <div class="right">
+        <div class="total" id="total"></div>
+      </div>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+    <div class="updated" id="updated"></div>
+  </div>
+  <script type="module">
+    const CATEGORIES = ['tops', 'bottoms', 'outerwear', 'shoes', 'bags', 'accessories']
+    const LABELS = { all: 'All', tops: 'Tops', bottoms: 'Bottoms', outerwear: 'Outerwear',
+      shoes: 'Shoes', bags: 'Bags', accessories: 'Accessories' }
+    const SYMBOL = { USD: '$', EUR: '€', GBP: '£' }
+    let active = 'all'
+
+    const fmt = (price, currency) => {
+      if (price == null || !Number.isFinite(price)) return '—'
+      const hasCents = Math.round(price * 100) % 100 !== 0
+      return (SYMBOL[currency] || '') + price.toLocaleString('en-US', {
+        minimumFractionDigits: hasCents ? 2 : 0, maximumFractionDigits: 2 })
+    }
+    const qtyOf = (it) => Number.isFinite(it.qty) && it.qty > 0 ? it.qty : 1
+
+    function render(items) {
+      document.getElementById('count').textContent =
+        `${items.length} item${items.length === 1 ? '' : 's'}`
+      const priced = items.filter((i) => Number.isFinite(i.price))
+      const currencies = [...new Set(priced.map((i) => i.currency || 'USD'))]
+      const counts = {}
+      for (const i of priced) { const c = i.currency || 'USD'; counts[c] = (counts[c] || 0) + 1 }
+      const dominant = currencies.sort((a, b) => counts[b] - counts[a])[0] || 'USD'
+      const total = priced.filter((i) => (i.currency || 'USD') === dominant)
+        .reduce((acc, i) => acc + i.price * qtyOf(i), 0)
+      document.getElementById('total').textContent = fmt(Math.round(total * 100) / 100, dominant)
+
+      const byCat = {}
+      for (const it of items) byCat[it.category] = (byCat[it.category] || 0) + 1
+      const tabs = document.getElementById('tabs')
+      tabs.innerHTML = ''
+      for (const key of ['all', ...CATEGORIES]) {
+        if (key !== 'all' && !byCat[key]) continue
+        const b = document.createElement('button')
+        b.textContent = LABELS[key]
+        if (key === active) b.classList.add('active')
+        b.onclick = () => { active = key; render(items) }
+        tabs.appendChild(b)
+      }
+
+      const grid = document.getElementById('grid')
+      grid.innerHTML = ''
+      const shown = active === 'all' ? items : items.filter((i) => i.category === active)
+      if (!shown.length) {
+        grid.innerHTML = '<div class="empty">Nothing here yet.</div>'
+        return
+      }
+      for (const it of shown) {
+        const card = document.createElement(it.url ? 'a' : 'div')
+        card.className = 'card'
+        if (it.url) { card.href = it.url; card.target = '_blank'; card.rel = 'noopener' }
+        card.innerHTML = `
+          <img class="thumb" alt="">
+          <div class="brand"></div>
+          <div class="name"></div>
+          <div class="price"></div>
+          <div class="meta"></div>`
+        const img = card.querySelector('.thumb')
+        if (it.image) img.src = it.image
+        img.onerror = () => { img.style.visibility = 'hidden' }
+        card.querySelector('.brand').textContent = it.brand || ''
+        card.querySelector('.name').textContent = it.title || ''
+        card.querySelector('.price').textContent = fmt(it.price, it.currency)
+        card.querySelector('.meta').textContent = [
+          qtyOf(it) > 1 ? `Qty ${it.qty}` : null, it.color, it.size,
+        ].filter(Boolean).join(' · ')
+        grid.appendChild(card)
+      }
+    }
+
+    const res = await fetch('items.json', { cache: 'no-cache' })
+    const data = await res.json()
+    render(data.items || [])
+    if (data.publishedAt) {
+      document.getElementById('updated').textContent =
+        'updated ' + new Date(data.publishedAt).toLocaleDateString('en-US',
+          { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+    }
+  </script>
+</body>
+</html>
