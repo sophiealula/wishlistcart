@@ -38,6 +38,15 @@ describe('normalizeItemPatch', () => {
     })
   })
 
+  it('normalizes qty (positive int, default 1) and trims color/size', () => {
+    expect(normalizeItemPatch({ qty: '3', color: '  Navy ', size: ' M ' }))
+      .toEqual({ qty: 3, color: 'Navy', size: 'M' })
+    expect(normalizeItemPatch({ qty: '', color: '', size: '' }))
+      .toEqual({ qty: 1, color: null, size: null })
+    expect(normalizeItemPatch({ qty: '0' })).toEqual({ qty: 1 })
+    expect(normalizeItemPatch({ qty: 'abc' })).toEqual({ qty: 1 })
+  })
+
   it('nulls blank optional fields and ignores invalid categories', () => {
     expect(normalizeItemPatch({
       title: ' ',

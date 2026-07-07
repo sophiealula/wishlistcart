@@ -4,7 +4,7 @@ import { parsePrice } from './lib/scrape.js'
 const KEY = 'wishlist_items'
 
 const TRACKING = /^(utm_|fbclid|gclid|mc_|ref|ref_|_branch|igshid)/i
-const EDITABLE_FIELDS = ['title', 'brand', 'price', 'currency', 'category', 'image', 'url']
+const EDITABLE_FIELDS = ['title', 'brand', 'price', 'currency', 'category', 'image', 'url', 'qty', 'color', 'size']
 
 // Normalize a product URL so the same item via tracking/share params de-dupes.
 export function normalizeUrl(url) {
@@ -68,6 +68,9 @@ export function normalizeItemPatch(patch) {
       out.currency = cleaned ? cleaned.toUpperCase() : 'USD'
     } else if (key === 'title') {
       out.title = cleanText(value) || 'Untitled item'
+    } else if (key === 'qty') {
+      const n = parseInt(value, 10)
+      out.qty = Number.isFinite(n) && n > 0 ? n : 1
     } else {
       out[key] = cleanText(value)
     }
