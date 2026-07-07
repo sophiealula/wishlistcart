@@ -19,14 +19,27 @@ the category. Nothing to type.
 When a scrape gets something wrong, hover a card and hit ✎ to edit any field
 (title / brand / price / currency / category / image / URL) in place.
 
-## Load it in Chrome (instant)
+## Install it (Chrome, Arc, Edge, Brave — any Chromium browser)
 
-1. `chrome://extensions` → turn on **Developer mode** (top right).
-2. **Load unpacked** → select the `extension/` folder.
-3. Pin the icon, open any product page, click it → **Save this page**.
-4. Click the ☰ in the popup to open the full gallery.
+1. Download `wishlistcart.zip` from the
+   [latest release](https://github.com/sophiealula/wishlistcart/releases/latest)
+   and unzip it. Keep the unzipped `wishlistcart` folder somewhere permanent
+   (Documents, not Downloads) — the browser loads it from there, so if you
+   delete the folder the extension breaks.
+2. Go to `chrome://extensions` and turn on **Developer mode** (toggle, top right).
+3. Click **Load unpacked** and select the unzipped `wishlistcart` folder.
+4. Pin the icon (puzzle piece → pin), open any product page, click it →
+   **Save this page**.
+5. Click the ☰ in the popup to open the full gallery view.
 
-> Note: Chrome 137+ removed the `--load-extension` command-line flag, so the
+Chrome will show a "developer mode extensions" notice on startup — that's
+normal for extensions installed outside the Web Store, just dismiss it.
+Your saved items live entirely in your own browser; nothing is uploaded.
+
+To update later: download the new zip, replace the folder's contents, and hit
+the ↻ reload button on the extension card in `chrome://extensions`.
+
+> Dev note: Chrome 137+ removed the `--load-extension` command-line flag, so the
 > extension can't be auto-loaded by Playwright — load it manually as above.
 
 ## Load it in Safari (needs full Xcode)
@@ -62,3 +75,16 @@ node dev/shot.mjs             # screenshots it to dev/gallery.png
 
 `dev/integration.mjs` loads the real extension via `--load-extension`, which
 Chrome 137+ removed — it only works on older Chrome.
+
+To cut a new release zip:
+
+```bash
+ditto extension wishlistcart
+zip -r wishlistcart.zip wishlistcart -x '*.DS_Store'
+rm -rf wishlistcart
+gh release create v0.x.y wishlistcart.zip --title v0.x.y
+```
+
+## License
+
+MIT
