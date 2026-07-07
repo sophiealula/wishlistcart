@@ -159,6 +159,7 @@ export function renderCollection(els, items) {
       <div class="brand"></div>
       <div class="name"></div>
       <div class="price"></div>
+      <div class="meta"></div>
       <div class="card-actions">
         <button class="edit" type="button" title="Edit item" aria-label="Edit item">✎</button>
         <button class="remove" type="button" title="Remove item" aria-label="Remove item">×</button>
@@ -169,6 +170,10 @@ export function renderCollection(els, items) {
     card.querySelector('.brand').textContent = it.brand || ''
     card.querySelector('.name').textContent = it.title || ''
     card.querySelector('.price').textContent = formatPrice(it.price, it.currency)
+    card.querySelector('.meta').textContent = [
+      Number.isFinite(it.qty) && it.qty > 1 ? `Qty ${it.qty}` : null,
+      it.color, it.size,
+    ].filter(Boolean).join(' · ')
     card.querySelector('.edit').onclick = (e) => {
       e.stopPropagation()
       openEditor(els, it)

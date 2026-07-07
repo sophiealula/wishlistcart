@@ -35,6 +35,8 @@ body { margin: 0; font-family: var(--font); color: var(--ink); background: var(-
   color: var(--muted); margin-top: 9px; }
 .card .name { font-size: 12px; line-height: 1.25; margin-top: 2px; }
 .card .price { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.card .meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.card .meta:empty { display: none; }
 .card-actions { position: absolute; top: 8px; right: 8px; display: flex; gap: 6px;
   opacity: 0; transition: opacity 0.15s; }
 .card:hover .card-actions, .card:focus-within .card-actions { opacity: 1; }
