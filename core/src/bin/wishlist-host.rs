@@ -74,8 +74,35 @@ fn handle(req: &Value) -> Value {
     }
 }
 
+// After any successful mutation, republish the family page. Fire-and-forget:
+// we inherit a TCC-blessed context (Chrome/terminal), unlike a launchd agent,
+// where reading the iCloud path hangs on a permission prompt that can't render.
+fn maybe_publish(op: &str, response: &Value) {
+    if response.get("ok").and_then(Value::as_bool) != Some(true) {
+        return;
+    }
+    if !matches!(op, "saveItem" | "updateItem" | "removeItem" | "import") {
+        return;
+    }
+    let Ok(home) = std::env::var("HOME") else { return };
+    let bin = PathBuf::from(&home).join(".local/bin/wishlist-publish");
+    let config = std::env::var("WISHLIST_PUBLISH_CONFIG")
+        .map(PathBuf::from)
+        .unwrap_or_else(|_| PathBuf::from(&home).join(".config/wishlistcart/publish.json"));
+    if bin.exists() && config.exists() {
+        let _ = std::process::Command::new(bin)
+            .stdin(std::process::Stdio::null())
+            .stdout(std::process::Stdio::null())
+            .stderr(std::process::Stdio::null())
+            .spawn();
+    }
+}
+
 fn main() {
     while let Some(req) = read_message() {
-        write_message(&handle(&req));
+        let response = handle(&req);
+        write_message(&response);
+        let op = req.get("op").and_then(Value::as_str).unwrap_or("");
+        maybe_publish(op, &response);
     }
 }

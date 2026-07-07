@@ -10,7 +10,9 @@ GOBLIN_ID="maihghimkloimpchnicmcacoajopcnek"   # ~/Documents/wishlistcart on gob
 
 cargo build --release --manifest-path core/Cargo.toml
 mkdir -p "$HOME/.local/bin"
-cp core/target/release/wishlist-host "$HOME/.local/bin/wishlist-host"
+# rm first: macOS SIGKILLs a binary whose inode was overwritten in place
+rm -f "$HOME/.local/bin/wishlist-host" "$HOME/.local/bin/wishlist-publish"
+cp core/target/release/wishlist-host core/target/release/wishlist-publish "$HOME/.local/bin/"
 
 mkdir -p "$HOME/Library/Mobile Documents/com~apple~CloudDocs/WishlistCart"
 

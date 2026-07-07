@@ -27,8 +27,23 @@
 ### Task 4: create the real Pages repo + first publish
 `gh repo create wl-<random> --public`, enable Pages (branch main, root) via `gh api`, write publish.json, `cargo build --release`, run `wishlist-publish`, poll the Pages URL until live, verify with WebFetch/curl + Playwright screenshot at phone width. Commit installer additions.
 
-### Task 5: launchd watcher
-`dev/install-publisher.sh`: installs the binary, writes `~/Library/LaunchAgents/ai.2389.sophie.wishlistcart.publish.plist` (WatchPaths = the wishlist file + ThrottleInterval 30), `launchctl bootstrap`. Verify: touch the wishlist file via a host save op, watch the publisher run (log file), confirm page updates. Commit.
+### Task 5: publish trigger — REVISED during execution
+The planned launchd `WatchPaths` agent is a dead end: reading
+`~/Library/Mobile Documents` from a launchd agent blocks forever inside
+`open()` — TCC can't render a permission prompt for a faceless background
+process (verified with `sample`: publisher hung 5+ min in `__open`).
+
+Revised design: **the host triggers the publisher.** After any successful
+mutating op, `wishlist-host` fire-and-forgets `wishlist-publish` (skipped when
+`~/.config/wishlistcart/publish.json` is absent, and in protocol tests via
+`WISHLIST_PUBLISH_CONFIG=/nonexistent`). The host inherits a TCC-blessed
+context (Chrome or a terminal), each Mac publishes its own edits, and no
+agent is needed at all. Verified end-to-end both directions (save → item live
+in ~40s; remove → gone in ~50s).
+
+Two macOS lessons encoded here: the TCC/launchd hang above, and `cp` over an
+installed binary in place = SIGKILL on next exec (stale code-signature cache);
+installers must `rm` first.
 
 ### Task 6: docs + hand over the link
 README family-page section; design-doc progress note. Give Sophie the URL.

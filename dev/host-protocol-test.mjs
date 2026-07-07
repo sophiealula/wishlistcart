@@ -14,7 +14,10 @@ const file = join(dir, 'wishlist.json')
 
 function call(msg) {
   return new Promise((resolve, reject) => {
-    const proc = spawn(bin, [], { env: { ...process.env, WISHLIST_FILE: file } })
+    // WISHLIST_PUBLISH_CONFIG points nowhere so test runs never publish.
+    const proc = spawn(bin, [], { env: {
+      ...process.env, WISHLIST_FILE: file, WISHLIST_PUBLISH_CONFIG: '/nonexistent',
+    } })
     const body = Buffer.from(JSON.stringify(msg))
     const len = Buffer.alloc(4)
     len.writeUInt32LE(body.length)

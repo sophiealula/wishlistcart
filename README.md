@@ -76,6 +76,15 @@ The host is a Rust binary (`core/`) speaking Chrome's native-messaging
 protocol; the same crate will grow UniFFI bindings for the Mac app.
 `node dev/host-protocol-test.mjs` integration-tests the built binary.
 
+## Family page
+
+`wishlist-publish` renders the wishlist (visible items only) into a static,
+phone-friendly, read-only page and force-pushes it to a random-named GitHub
+Pages repo — an unguessable link to share with family. The host triggers a
+republish after every save/edit/remove, so the page tracks the list with
+~1 minute of lag. Config: `~/.config/wishlistcart/publish.json`
+(`{"remote": ..., "workDir": ...}`); no config → publishing is skipped.
+
 ## Develop
 
 ```bash
