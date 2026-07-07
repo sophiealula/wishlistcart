@@ -57,6 +57,25 @@ Then run the built app once, and in Safari: Settings → Advanced → "Show feat
 for web developers"; Develop → "Allow Unsigned Extensions"; Settings →
 Extensions → enable WishlistCart.
 
+## Synced mode (Sophie's Macs)
+
+By default the extension keeps items in browser-local storage. When the
+`wishlist-host` native-messaging host is installed, the extension detects it
+and reads/writes a shared file instead:
+`~/Library/Mobile Documents/com~apple~CloudDocs/WishlistCart/wishlist.json` —
+iCloud Drive syncs it between Macs, so Chrome/Arc/Safari all see one list.
+Existing browser-local items migrate into the file automatically on first
+contact. Friends without the host are untouched — the extension silently
+falls back to local storage.
+
+```bash
+./dev/install-host.sh   # builds the Rust host, installs binary + Chrome manifest
+```
+
+The host is a Rust binary (`core/`) speaking Chrome's native-messaging
+protocol; the same crate will grow UniFFI bindings for the Mac app.
+`node dev/host-protocol-test.mjs` integration-tests the built binary.
+
 ## Develop
 
 ```bash
