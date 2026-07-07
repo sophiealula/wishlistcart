@@ -36,6 +36,11 @@ function ensureEditor() {
         <label>Currency<input name="currency" maxlength="3"></label>
         <label>Category<select name="category"></select></label>
       </div>
+      <div class="editor-row three">
+        <label>Qty<input name="qty" type="number" min="1" step="1"></label>
+        <label>Color<input name="color"></label>
+        <label>Size<input name="size"></label>
+      </div>
       <label>Image URL<input name="image" type="url"></label>
       <label>Product URL<input name="url" type="url"></label>
       <div class="editor-actions">
@@ -77,6 +82,9 @@ function openEditor(els, item) {
   f.price.value = Number.isFinite(item.price) ? String(item.price) : ''
   f.currency.value = item.currency || 'USD'
   f.category.value = CATEGORIES.includes(item.category) ? item.category : 'accessories'
+  f.qty.value = Number.isFinite(item.qty) && item.qty > 0 ? String(item.qty) : '1'
+  f.color.value = item.color || ''
+  f.size.value = item.size || ''
   f.image.value = item.image || ''
   f.url.value = item.url || ''
 
@@ -96,6 +104,9 @@ function openEditor(els, item) {
         price,
         currency: f.currency.value,
         category: f.category.value,
+        qty: f.qty.value,
+        color: f.color.value,
+        size: f.size.value,
         image: f.image.value,
         url: f.url.value,
       })

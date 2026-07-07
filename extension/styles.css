@@ -74,12 +74,13 @@ body { margin: 0; font-family: var(--font); color: var(--ink); background: var(-
   border-radius: 8px; background: #fff; color: var(--ink); padding: 0 10px; font: 14px var(--font);
   letter-spacing: 0; text-transform: none; }
 .editor-row { display: grid; grid-template-columns: minmax(0, 1fr) 128px; gap: 12px; }
+.editor-row.three { grid-template-columns: 72px minmax(0, 1fr) minmax(0, 1fr); }
 .editor-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 2px; }
 .editor-actions button { height: 38px; border-radius: 8px; padding: 0 14px; font: 14px var(--font);
   cursor: pointer; }
 .editor-actions .secondary { border: 1px solid var(--line); background: #fff; color: var(--ink); }
 .editor-actions .primary { border: 1px solid var(--ink); background: var(--ink); color: #fff; }
-@media (max-width: 460px) { .editor-row { grid-template-columns: 1fr; } }
+@media (max-width: 460px) { .editor-row, .editor-row.three { grid-template-columns: 1fr; } }
 
 /* gallery-specific */
 .page { max-width: 980px; margin: 0 auto; padding: 0 8px; }
