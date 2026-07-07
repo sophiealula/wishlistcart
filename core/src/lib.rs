@@ -3,3 +3,4 @@ pub mod urlnorm;
 pub mod merge;
 pub mod store;
 pub mod ops;
+pub mod publishing;
